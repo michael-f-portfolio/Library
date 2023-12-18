@@ -114,7 +114,6 @@ div#addBookTitle {
 dialog#addBookDialog {
     border-radius: 10px;
     border: 2px solid var(--slate-800);
-    /* border: none; */
     background-color: var(--slate-300);
     width: 350px;
     height: 450px;
