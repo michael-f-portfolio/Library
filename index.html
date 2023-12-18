@@ -33,7 +33,7 @@
                             <input type="checkbox" id="has-been-read">
                         </div>
                         <div class="add-book-buttons">
-                            <button id="confirmBtn" value="default">Confirm</button>
+                            <button id="confirmAddBtn" value="default">Confirm</button>
                             <button value="cancel" formmethod="dialog">Cancel</button>
                         </div>
                     </form>
@@ -42,6 +42,15 @@
         </div>
     </header>
     <div class="library-container">
+        <dialog id="removeBookDialog">
+            <div class="remove-book-container">
+                <div id="removeBookTitle">Remove <span></span>?</div>
+                <div class="remove-book-buttons">
+                    <button id="confirmRemoveBtn" value="default">Confirm</button>
+                    <button id="cancelRemoveBtn" value="cancel">Cancel</button>
+                </div>
+            </div>
+        </dialog>
         <div class="display-books"></div>
     </div>
     <footer>
