@@ -21,6 +21,7 @@ Book.prototype.toggleRead = function() {
 
 function addBookToLibrary() {
     const inputElementsAsArray = [...document.querySelectorAll(".add-book-input")];
+    const hasBeenReadCheckbox = document.querySelector("#has-been-read");
     let newBookTitle, newBookAuthor, newBookNumberOfPages, newBookHasBeenRead;
     inputElementsAsArray.forEach(input => {
         if (input.lastElementChild.id === "title") {
@@ -29,10 +30,11 @@ function addBookToLibrary() {
             newBookAuthor = input.lastElementChild.value;
         } else if (input.lastElementChild.id === "number-of-pages") {
             newBookNumberOfPages = parseInt(input.lastElementChild.value);
-        } else if (input.lastElementChild.id === "has-been-read") {
-            newBookHasBeenRead = input.lastElementChild.value === "true";
         }
     });
+
+    newBookHasBeenRead = hasBeenReadCheckbox.checked === true;
+
     libraryBooks.push(new Book(libraryBooks.length, newBookTitle, newBookAuthor, newBookNumberOfPages, newBookHasBeenRead));
     displayBooks();
 }

@@ -167,6 +167,20 @@ div.add-book-input {
     flex-direction: column;
 }
 
+form#addBookForm div.add-book-checkbox {
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+div.add-book-checkbox label span {
+    font-size: 1.2rem;
+}
+
+form#addBookForm div.add-book-checkbox input {
+    width: 30px;
+    height: 30px;
+}
+
 div.add-book-buttons {
     justify-content: space-evenly;
     gap: 48px;
