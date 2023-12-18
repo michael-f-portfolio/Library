@@ -153,6 +153,11 @@ form#addBookForm input, form#addBookForm select {
     font-size: 1.3rem;
 }
 
+form#addBookForm input:focus {
+    outline: none;
+    background-color: var(--slate-200);
+}
+
 form#addBookForm div {
     display: flex;
     padding-top: 16px;
