@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Assignment</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title">My Library</div>
+    <div class="library-container">
+        <div class="add-book">
+            <button id="showAddBookDialog">Add New Book</button>
+            <dialog id="addBookDialog">
+                <div class="add-book-container">
+                    <form id="addBookForm">
+                        <div id="addBookTitle">Add New Book</div>
+                        <div class="add-book-input">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" id="title" value="Test Title">
+                        </div>
+                        <div class="add-book-input">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" id="author" value="Test Author">
+                        </div>
+                        <div class="add-book-input">
+                            <label for="number-of-pages"># of Pages:</label>
+                            <input type="number" name="numberOfPages" id="number-of-pages" value="555">
+                        </div>
+                        <div class="add-book-input">
+                            <label for="has-been-read">Has been read:</label>
+                            <select name="hasBeenRead" id="has-been-read">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                        <div class="add-book-buttons">
+                            <button id="confirmBtn" value="default">Confirm</button>
+                            <button value="cancel" formmethod="dialog">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+        </div>
+        <div class="display-books"></div>
+    </div>
+</body>
+</html>
