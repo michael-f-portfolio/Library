@@ -15,7 +15,46 @@
     --blue-400: #60a5fa;
     --blue-600: #2563eb;
     --blue-800: #1e40af;
+
+    /* Spacing */
+    --spacing-xxs: 8px;
+    --spacing-xs: 12px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 2.5rem;
+    --font-size-xxl: 3rem;
+
+    /* Font Weight */
+    --font-weight-1: 100;
+    --font-weight-2: 300;
+    --font-weight-3: 400;
+    --font-weight-4: 500;
+    --font-weight-5: 600;
+    --font-weight-6: 800;
 }
+
+.font-size-xs {font-size: var(--font-size-xs);}
+.font-size-sm {font-size: var(--font-size-sm);}
+.font-size-md {font-size: var(--font-size-md);}
+.font-size-lg {font-size: var(--font-size-lg);}
+.font-size-xl {font-size: var(--font-size-xl);}
+.font-size-xxl {font-size: var(--font-size-xxl);}
+.font-weight-thin {font-weight: var(--font-weight-1);}
+.font-weight-light {font-weight: var(--font-weight-2);}
+.font-weight-normal {font-weight: var(--font-weight-3);}
+.font-weight-semibold {font-weight: var(--font-weight-4);}
+.font-weight-bold {font-weight: var(--font-weight-5);}
+.font-weight-extrabold {font-weight: var(--font-weight-6);}
+.font-style-italic {font-style: italic;}
+
 
 html {
     position: relative;
@@ -34,6 +73,7 @@ button {
     border: 2px solid var(--slate-600);
     border-radius: 10px;
     color: var(--slate-200);
+    padding: var(--spacing-xs) var(--spacing-md);
 }
 
 button:hover {
@@ -43,7 +83,7 @@ button:hover {
 
 dialog {
     width: 350px;
-    height: 450px;
+    height: 475px;
     padding: 0px;
     border-radius: 10px;
     border: 2px solid var(--slate-800);
@@ -55,7 +95,7 @@ dialog::backdrop {
 }
 
 dialog button {
-    padding: 8px 18px;
+    padding: var(--spacing-xxs) var(--spacing-sm);
 }
 
 dialog > div {
@@ -71,20 +111,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 25px;
-    padding: 16px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-
-div.title {
-    font-size: 3.3rem;
-    font-weight: 600;
 }
 
 input {
     background-color: var(--slate-100);
     border-radius: 10px;
-    text-indent: 10px;
+    text-indent: var(--spacing-xs);
     border: none;
 }
 
@@ -109,8 +144,7 @@ footer {
 footer a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1rem;
+    gap: var(--spacing-xxs);
 }
 
 footer a, footer a:visited {
@@ -123,67 +157,47 @@ footer img {
 }
 
 /***** Add New Book Dialog Button and Form *****/
-button#showAddBookDialog {
-    padding: 12px 24px;
-    font-size: 1.4rem;
-}
-
-div#addBookTitle {
-    font-size: 2.2rem;
-    font-weight: 500;
-    align-self: center;
-}
-
-form#addBookForm {
+form {
     display: flex;
     flex-direction: column;
     width: 300px;
     align-items: center;
 }
 
-form#addBookForm label {
-    font-size: 1.3rem;
-}
-
-form#addBookForm input {
+input {
     width: 200px;
     height: 40px;
-    font-size: 1.3rem;
 }
 
-form#addBookForm div {
+form div {
     display: flex;
-    padding-top: 16px;
+    padding-top: var(--spacing-sm);
 }
 
-div.add-book-input {
+.add-book-input {
     flex-direction: column;
 }
 
-form#addBookForm div.add-book-checkbox {
+.add-book-checkbox {
     justify-content: space-between;
     align-items: center;
     width: 200px;
 }
 
-div.add-book-checkbox label span {
-    font-size: 1.2rem;
-}
-
-form#addBookForm div.add-book-checkbox input {
+.add-book-checkbox input {
     width: 30px;
     height: 30px;
 }
 
-div.add-book-buttons {
+.add-book-buttons {
     justify-content: space-evenly;
-    gap: 48px;
+    gap: var(--spacing-xl);
 }
 
 /*****  Remove Book Dialog *****/
 dialog#removeBookDialog {
-    height: 150px;
-    width: 300px;
+    height: 200px;
+    width: 350px;
 }
 
 .remove-book-container {
@@ -191,29 +205,29 @@ dialog#removeBookDialog {
 }
 
 .remove-book-buttons {
-    padding-top: 32px;
+    padding-top: var(--spacing-lg);
 }
 
 .remove-book-buttons button {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: var(--spacing-sm);
+    margin-right: var(--spacing-sm);
 }
 
 /*****  Library Books Display *****/
-div.library-container {
+.library-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-div.display-books {
+.display-books {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: var(--spacing-md);
 }
 
-div.book {
+.book {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -229,14 +243,14 @@ div.book {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-div.book:hover {
+.book:hover {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .book-details {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--spacing-sm);
 }
 
 .book-stats {
@@ -245,50 +259,38 @@ div.book:hover {
 }
 
 .book-title {
-    font-size: 1.4rem;
-    font-weight: 600;
     align-self: center;
     min-height: 60px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 16px;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    padding-top: var(--spacing-sm);
 }
 
 .book-author {
-    font-size: 1.1rem;
-    font-style: italic;
     align-self: end;
-    margin-right: 16px;
+    margin-right: var(--spacing-sm);
 }
 
 .book-stats div {
     display: flex;
-    padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 16px;
+    padding-right: var(--spacing-sm);
+    padding-top: var(--spacing-xxs);
+    padding-bottom: var(--spacing-sm);
     justify-content: end;
-    font-size: 0.8rem;
 }
 
 .book-actions {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 8px;
+    padding-bottom: var(--spacing-xxs);
 }
 
 .book-actions button {
-    font-weight: 600;
-    padding: 6px 12px;
-    font-size: 0.8rem;
+    padding: var(--spacing-xxs) var(--spacing-xs);
 }
 
-@media screen and (max-width: 500px) {
-    div.title {
-        font-size: 1.5rem;
-    }
-
-    button#showAddBookDialog {
-        padding: 8px 16px;
-        font-size: 1rem;
-    }
+@media screen and (max-width: 540px) {
+    .font-size-lg {font-size: var(--font-size-md);}
+    .font-size-xl {font-size: var(--font-size-lg);}
+    .font-size-xxl {font-size: var(--font-size-xl);}
 }

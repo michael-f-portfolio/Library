@@ -9,32 +9,32 @@
 </head>
 <body>
     <header>
-        <div class="title">My Library</div>
+        <div class="font-size-xxl font-weight-bold">My Library</div>
         <div class="add-book">
-            <button id="showAddBookDialog">Add New Book</button>
+            <button class="font-size-lg" id="showAddBookDialog">Add New Book</button>
             <dialog id="addBookDialog">
                 <div class="add-book-container">
                     <form id="addBookForm">
-                        <div id="addBookTitle">Add New Book</div>
+                        <div class="font-size-xl font-weight-semibold">Add New Book</div>
                         <div class="add-book-input">
-                            <label for="title">Title:</label>
-                            <input type="text" name="title" id="title" value="Test Title">
+                            <label class="font-size-md" for="title">Title:</label>
+                            <input class="font-size-md" type="text" name="title" id="title">
                         </div>
                         <div class="add-book-input">
-                            <label for="author">Author:</label>
-                            <input type="text" name="author" id="author" value="Test Author">
+                            <label class="font-size-md" for="author">Author:</label>
+                            <input class="font-size-md" type="text" name="author" id="author">
                         </div>
                         <div class="add-book-input">
-                            <label for="number-of-pages"># of Pages:</label>
-                            <input type="number" name="numberOfPages" id="numberOfPages" value="555">
+                            <label class="font-size-md" for="number-of-pages">Number of Pages:</label>
+                            <input class="font-size-md" type="number" name="numberOfPages" id="numberOfPages">
                         </div>
                         <div class="add-book-checkbox">
-                            <label for="has-been-read"><span>Has been read:</span></label>
+                            <label class="font-size-md" for="has-been-read"><span>Has been read:</span></label>
                             <input type="checkbox" id="hasBeenRead">
                         </div>
                         <div class="add-book-buttons">
-                            <button id="confirmAddButton" value="default">Confirm</button>
-                            <button value="cancel" formmethod="dialog">Cancel</button>
+                            <button class="font-size-md" id="confirmAddButton" value="default">Confirm</button>
+                            <button class="font-size-md" value="cancel" formmethod="dialog">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -44,17 +44,17 @@
     <div class="library-container">
         <dialog id="removeBookDialog">
             <div class="remove-book-container">
-                <div id="removeBookTitle">Remove <span></span>?</div>
+                <div class="font-size-md" id="removeBookTitle">Remove <span></span>?</div>
                 <div class="remove-book-buttons">
-                    <button id="confirmRemoveButton" value="default">Confirm</button>
-                    <button id="cancelRemoveButton" value="cancel">Cancel</button>
+                    <button class="font-size-md" id="confirmRemoveButton" value="default">Confirm</button>
+                    <button class="font-size-md" id="cancelRemoveButton" value="cancel">Cancel</button>
                 </div>
             </div>
         </dialog>
         <div class="display-books"></div>
     </div>
     <footer>
-        <a href="https://github.com/michael-f-portfolio/" target="_blank">
+        <a class="font-size-sm" href="https://github.com/michael-f-portfolio/Library" target="_blank">
             Copyright © 2023 Michael F.
             <img src="res/img/github-mark.png" alt="Github Logo">
         </a>

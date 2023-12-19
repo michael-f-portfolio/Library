@@ -34,13 +34,11 @@ function addBookToLibrary() {
     });
     newBookHasBeenRead = hasBeenReadCheckbox.checked === true;
     libraryBooks.push(new Book(newBookTitle, newBookAuthor, newBookNumberOfPages, newBookHasBeenRead));
-    displayBooks();
 }
 
 function removeBookFromLibrary(bookId) {
     const bookToRemoveIndex = libraryBooks.findIndex(book  => book.id === parseInt(bookId));
-    const removedBook = libraryBooks.splice(bookToRemoveIndex, 1);
-    displayBooks();
+    return libraryBooks.splice(bookToRemoveIndex, 1);
 }
 
 function displayBooks() {
@@ -51,11 +49,11 @@ function displayBooks() {
         newBookContainer.className = "book";
 
         let bookTitleDiv = document.createElement("div");
-        bookTitleDiv.className = "book-title";
+        bookTitleDiv.className = "book-title font-size-md font-weight-semibold";
         bookTitleDiv.textContent = book.title;
 
         let bookAuthorDiv = document.createElement("div");
-        bookAuthorDiv.className = "book-author";
+        bookAuthorDiv.className = "book-author font-size-sm font-style-italic";
         bookAuthorDiv.textContent = book.author;
 
         let bookDetailsDiv = document.createElement("div");
@@ -64,11 +62,11 @@ function displayBooks() {
         bookDetailsDiv.append(bookAuthorDiv);
 
         let bookNumberOfPagesDiv = document.createElement("div");
-        bookNumberOfPagesDiv.classList = "book-pages";
+        bookNumberOfPagesDiv.classList = "book-pages font-size-xs";
         bookNumberOfPagesDiv.textContent = `${book.pages} Pages`;
 
         let bookHasBeenReadDiv = document.createElement("div");
-        bookHasBeenReadDiv.classList = "book-read";
+        bookHasBeenReadDiv.classList = "book-read font-size-xs";
         bookHasBeenReadDiv.textContent = book.hasBeenRead ? "Read" : "Unread";
 
         let bookStatsDiv = document.createElement("div");
@@ -84,6 +82,7 @@ function displayBooks() {
         let removeBookButton = document.createElement("button");
         removeBookButton.textContent = "Remove Book";
         removeBookButton.setAttribute("bookId", book.id);
+        removeBookButton.className = "font-size-sm";
 
         const removeBookDialog = document.querySelector("#removeBookDialog");
         removeBookButton.addEventListener("click", (event) => {
@@ -97,6 +96,7 @@ function displayBooks() {
         // Toggle Read Status
         let toggleReadButton = document.createElement("button");
         toggleReadButton.textContent = "Toggle Read";
+        toggleReadButton.className = "font-size-sm"
         toggleReadButton.addEventListener("click", book.toggleRead.bind(book));
         toggleReadButton.addEventListener("click", displayBooks);
 
@@ -120,6 +120,7 @@ showAddBookDialogButton.addEventListener("click", () => addBookDialog.showModal(
 confirmAddButton.addEventListener("click", (event) => {
     event.preventDefault();
     addBookToLibrary();
+    displayBooks();
     addBookDialog.close();
 });
 // Close Add Book Dialog Modal if a click happens anywhere but within the container div
@@ -135,6 +136,7 @@ confirmRemoveButton.addEventListener("click", () => {
     const removeBookTitle = document.querySelector("#removeBookTitle");
     const bookToRemoveIndex = removeBookTitle.querySelector("span").getAttribute("bookId");
     removeBookFromLibrary(bookToRemoveIndex);
+    displayBooks();
     removeBookDialog.close();
 });
 // Close Remove Dialog Modal
