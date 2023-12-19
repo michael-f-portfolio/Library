@@ -21,14 +21,14 @@ Book.prototype.toggleRead = function() {
 
 function addBookToLibrary() {
     const inputElementsAsArray = [...document.querySelectorAll(".add-book-input")];
-    const hasBeenReadCheckbox = document.querySelector("#has-been-read");
+    const hasBeenReadCheckbox = document.querySelector("#hasBeenRead");
     let newBookTitle, newBookAuthor, newBookNumberOfPages, newBookHasBeenRead;
     inputElementsAsArray.forEach(input => {
         if (input.lastElementChild.id === "title") {
             newBookTitle = input.lastElementChild.value;
         } else if (input.lastElementChild.id === "author") {
             newBookAuthor = input.lastElementChild.value;
-        } else if (input.lastElementChild.id === "number-of-pages") {
+        } else if (input.lastElementChild.id === "numberOfPages") {
             newBookNumberOfPages = parseInt(input.lastElementChild.value);
         }
     });
@@ -105,33 +105,31 @@ function displayBooks() {
 
         bookActionsContainerDiv.append(toggleReadButton);
         bookActionsContainerDiv.append(removeBookButton);
-
         newBookContainer.append(bookActionsContainerDiv);
-
         booksContainer.append(newBookContainer);
     });
 }
 
+//// Add Book Dialog Events
 // Show Add book dialog modal
 const showAddBookDialogButton = document.querySelector("#showAddBookDialog");
 const addBookDialog = document.querySelector("#addBookDialog");
-const confirmAddButton = addBookDialog.querySelector("#confirmAddBtn");
-showAddBookDialogButton.addEventListener("click", () => {
-    addBookDialog.showModal();
-});
+const confirmAddButton = addBookDialog.querySelector("#confirmAddButton");
+showAddBookDialogButton.addEventListener("click", () => addBookDialog.showModal());
 // Add to library and close dialog modal
 confirmAddButton.addEventListener("click", (event) => {
     event.preventDefault();
     addBookToLibrary();
     addBookDialog.close();
 });
-// Close dialog modal if a click happens anywhere but within the container div
+// Close Add Book Dialog Modal if a click happens anywhere but within the container div
 addBookDialog.addEventListener("click", () => addBookDialog.close());
 const addBookContainer = document.querySelector(".add-book-container");
 addBookContainer.addEventListener("click", (event) => event.stopPropagation());
 
+//// Remove Book Dialog Events
 // Remove from library and close dialog modal
-const confirmRemoveButton = document.querySelector("#confirmRemoveBtn");
+const confirmRemoveButton = document.querySelector("#confirmRemoveButton");
 const removeBookDialog = document.querySelector("#removeBookDialog");
 confirmRemoveButton.addEventListener("click", () => {
     const removeBookTitle = document.querySelector("#removeBookTitle");
@@ -140,10 +138,12 @@ confirmRemoveButton.addEventListener("click", () => {
     removeBookDialog.close();
 });
 // Close Remove Dialog Modal
-const cancelRemoveButton = document.querySelector("#cancelRemoveBtn");
-cancelRemoveButton.addEventListener("click", () => {
-    removeBookDialog.close();
-});
+const cancelRemoveButton = document.querySelector("#cancelRemoveButton");
+cancelRemoveButton.addEventListener("click", () => removeBookDialog.close());
+// Close Remove Book Dialog Modal if a click happens anywhere but within the container div
+removeBookDialog.addEventListener("click", () => removeBookDialog.close());
+const removeBookContainer = document.querySelector(".remove-book-container");
+removeBookContainer.addEventListener("click", (event) => event.stopPropagation());
 
 function app() {
     displayBooks();
