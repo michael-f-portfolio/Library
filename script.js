@@ -23,13 +23,14 @@ function addBookToLibrary() {
     const inputElementsAsArray = [...document.querySelectorAll(".add-book-input")];
     const hasBeenReadCheckbox = document.querySelector("#hasBeenRead");
     let newBookTitle, newBookAuthor, newBookNumberOfPages, newBookHasBeenRead;
-    inputElementsAsArray.forEach(input => {
-        if (input.lastElementChild.id === "title") {
-            newBookTitle = input.lastElementChild.value;
-        } else if (input.lastElementChild.id === "author") {
-            newBookAuthor = input.lastElementChild.value;
-        } else if (input.lastElementChild.id === "numberOfPages") {
-            newBookNumberOfPages = parseInt(input.lastElementChild.value);
+    inputElementsAsArray.forEach(inputDiv => {
+        let inputElement = inputDiv.querySelector("input");
+        if (inputElement.id === "title") {
+            newBookTitle = inputElement.value;
+        } else if (inputElement.id === "author") {
+            newBookAuthor = inputElement.value;
+        } else if (inputElement.id === "numberOfPages") {
+            newBookNumberOfPages = parseInt(inputElement.value);
         }
     });
     newBookHasBeenRead = hasBeenReadCheckbox.checked === true;
@@ -43,7 +44,7 @@ function removeBookFromLibrary(bookId) {
 
 function displayBooks() {
     let booksContainer = document.querySelector(".display-books");
-    booksContainer.innerHTML = "";
+    booksContainer.textContent = "";
     libraryBooks.forEach(book => {
         let newBookContainer = document.createElement("div");
         newBookContainer.className = "book";
@@ -134,8 +135,8 @@ const confirmRemoveButton = document.querySelector("#confirmRemoveButton");
 const removeBookDialog = document.querySelector("#removeBookDialog");
 confirmRemoveButton.addEventListener("click", () => {
     const removeBookTitle = document.querySelector("#removeBookTitle");
-    const bookToRemoveIndex = removeBookTitle.querySelector("span").getAttribute("bookId");
-    removeBookFromLibrary(bookToRemoveIndex);
+    const bookToRemoveId = removeBookTitle.querySelector("span").getAttribute("bookId");
+    removeBookFromLibrary(bookToRemoveId);
     displayBooks();
     removeBookDialog.close();
 });
