@@ -41,6 +41,31 @@ button:hover {
     background-color: var(--blue-800);
 }
 
+dialog {
+    width: 350px;
+    height: 450px;
+    padding: 0px;
+    border-radius: 10px;
+    border: 2px solid var(--slate-800);
+    background-color: var(--slate-300);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+dialog button {
+    padding: 8px 18px;
+}
+
+dialog > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 header {
     background-color: var(--slate-100);
     display: flex;
@@ -49,6 +74,18 @@ header {
     margin-bottom: 25px;
     padding: 16px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+input {
+    background-color: var(--slate-100);
+    border-radius: 10px;
+    text-indent: 10px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--slate-200);
 }
 
 footer {
@@ -69,7 +106,6 @@ footer a {
     align-items: center;
     gap: 8px;
     font-size: 1rem;
-
 }
 
 footer a, footer a:visited {
@@ -86,45 +122,16 @@ div.title {
     font-weight: 600;
 }
 
-/*****  Show Add Book Dialog Button and Form *****/
+/***** Add New Book Dialog Button and Form *****/
 button#showAddBookDialog {
-    background-color: var(--blue-600);
-    border: 2px solid var(--slate-600);
-    border-radius: 10px;
     padding: 12px 24px;
     font-size: 1.4rem;
-    color: var(--slate-200);
-}
-
-button#showAddBookDialog:hover {
-    background-color: var(--blue-800);
-    cursor: pointer;
-}
-
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 div#addBookTitle {
     font-size: 2.2rem;
     font-weight: 500;
     align-self: center;
-}
-
-dialog#addBookDialog {
-    border-radius: 10px;
-    border: 2px solid var(--slate-800);
-    background-color: var(--slate-300);
-    width: 350px;
-    height: 450px;
-    padding: 0px;
-}
-
-dialog#addBookDialog > div {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
 }
 
 form#addBookForm {
@@ -138,23 +145,10 @@ form#addBookForm label {
     font-size: 1.3rem;
 }
 
-form#addBookForm select, form#addBookForm option {
-    background-color: var(--slate-100);
-}
-
-form#addBookForm input, form#addBookForm select {
-    background-color: var(--slate-100);
-    border-radius: 10px;
-    text-indent: 10px;
-    border: none;
+form#addBookForm input {
     width: 200px;
     height: 40px;
     font-size: 1.3rem;
-}
-
-form#addBookForm input:focus {
-    outline: none;
-    background-color: var(--slate-200);
 }
 
 form#addBookForm div {
@@ -171,6 +165,7 @@ form#addBookForm div.add-book-checkbox {
     align-items: center;
     width: 200px;
 }
+
 div.add-book-checkbox label span {
     font-size: 1.2rem;
 }
@@ -185,9 +180,26 @@ div.add-book-buttons {
     gap: 48px;
 }
 
-dialog button {
-    padding: 8px 18px;
+/*****  Remove Book Dialog *****/
+dialog#removeBookDialog {
+    height: 150px;
+    width: 300px;
+
 }
+
+.remove-book-container {
+    flex-direction: column;
+}
+
+.remove-book-buttons {
+    padding-top: 32px;
+}
+
+.remove-book-buttons button {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 
 /*****  Library Books Display *****/
 div.library-container {

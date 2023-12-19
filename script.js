@@ -40,7 +40,6 @@ function addBookToLibrary() {
 function removeBookFromLibrary(bookId) {
     const bookToRemoveIndex = libraryBooks.findIndex(book  => book.id === parseInt(bookId));
     const removedBook = libraryBooks.splice(bookToRemoveIndex, 1);
-    console.log(`Removed: ${removedBook[0].title}`);
     displayBooks();
 }
 
@@ -88,7 +87,6 @@ function displayBooks() {
 
         const removeBookDialog = document.querySelector("#removeBookDialog");
         removeBookButton.addEventListener("click", (event) => {
-            console.log(event);
             const bookId = event.target.getAttribute("bookId");
             const removeBookTitle = document.querySelector("#removeBookTitle").querySelector("span");
             removeBookTitle.textContent = libraryBooks.find(book => book.id === parseInt(bookId)).title;
