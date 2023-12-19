@@ -76,6 +76,11 @@ header {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+div.title {
+    font-size: 3.3rem;
+    font-weight: 600;
+}
+
 input {
     background-color: var(--slate-100);
     border-radius: 10px;
@@ -115,11 +120,6 @@ footer a, footer a:visited {
 
 footer img {
     width: 24px;
-}
-
-div.title {
-    font-size: 3.3rem;
-    font-weight: 600;
 }
 
 /***** Add New Book Dialog Button and Form *****/
@@ -184,7 +184,6 @@ div.add-book-buttons {
 dialog#removeBookDialog {
     height: 150px;
     width: 300px;
-
 }
 
 .remove-book-container {
@@ -199,7 +198,6 @@ dialog#removeBookDialog {
     margin-left: 16px;
     margin-right: 16px;
 }
-
 
 /*****  Library Books Display *****/
 div.library-container {
@@ -292,6 +290,5 @@ div.book:hover {
     button#showAddBookDialog {
         padding: 8px 16px;
         font-size: 1rem;
-        color: var(--slate-200);
     }
 }
