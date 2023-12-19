@@ -2,6 +2,7 @@
 
 :root {
     /* colors based on tailwind's slate scale */
+    /* https://tailwindcss.com/docs/customizing-colors */
     --slate-100: #f1f5f9;
     --slate-200: #e2e8f0;
     --slate-300: #cbd5e1;
