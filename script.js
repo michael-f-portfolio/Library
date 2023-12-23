@@ -1,23 +1,26 @@
+class Book {
+    constructor(title, author, numberOfPages, hasBeenRead) {
+        this.id = Math.floor((Math.random() * 1000000));
+        this.title = title;
+        this.author = author;
+        this.pages = numberOfPages;
+        this.hasBeenRead = hasBeenRead;
+    }
+
+    toggleRead() {
+        this.hasBeenRead = this.hasBeenRead === true ? false : true;
+    }
+
+    info() {
+        return `${title} by ${author}, ${numberOfPages} pages, ${hasBeenRead ? "has been read" : "not read yet"}`;
+    }
+}
+
 const libraryBooks = [
     new Book ("Meditations", "Marcus Aurelius", 190, false),
     new Book ("Future Science", "Max Brockman", 247, false),
     new Book ("The Journey of Socrates", "Dan Millman", 336, true)
 ];
-
-function Book(title, author, numberOfPages, hasBeenRead) {
-    this.id = Math.floor((Math.random() * 1000000));
-    this.title = title;
-    this.author = author;
-    this.pages = numberOfPages;
-    this.hasBeenRead = hasBeenRead;
-    this.info = function() {
-        return `${title} by ${author}, ${numberOfPages} pages, ${hasBeenRead ? "has been read" : "not read yet"}`;
-    }
-}
-
-Book.prototype.toggleRead = function() {
-    this.hasBeenRead = this.hasBeenRead === true ? false : true;
-}
 
 function addBookToLibrary() {
     const inputElementsAsArray = [...document.querySelectorAll(".add-book-input")];
